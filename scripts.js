@@ -67,6 +67,50 @@ let listing = JSON.parse(localStorage.getItem("listing"))
     card_icon3: "1500 Sq M",
     bot_head: "Apartment",
 },
+{
+    img:"./assets/p1.jpg",
+    title:"Bachelor Pad",
+    type:"double",
+    carhead: "Southern Road, Dubai",
+    card_icon: 5,
+    card_icon1: 4,
+    card_icon2: 3,
+    card_icon3: "1900 Sq M",
+    bot_head: "Apartment",
+},
+{
+    img:"./assets/hr6.jpg",
+    title:"Bachelor",
+    type:"double",
+    carhead: "Modern Road, Texas",
+    card_icon: 4,
+    card_icon1: 3,
+    card_icon2: 2,
+    card_icon3: "1500 Sq M",
+    bot_head: "Apartment",
+},
+{
+    img:"./assets/hr6.jpg",
+    title:"Bachelor",
+    type:"double",
+    carhead: "Modern Road, Texas",
+    card_icon: 4,
+    card_icon1: 3,
+    card_icon2: 2,
+    card_icon3: "1500 Sq M",
+    bot_head: "Apartment",
+},
+{
+    img:"./assets/hr6.jpg",
+    title:"Bachelor",
+    type:"double",
+    carhead: "Modern Road, Texas",
+    card_icon: 4,
+    card_icon1: 3,
+    card_icon2: 2,
+    card_icon3: "1500 Sq M",
+    bot_head: "Apartment",
+},
   ]; 
   
   
@@ -84,7 +128,7 @@ let listing = JSON.parse(localStorage.getItem("listing"))
           <i class="fa-solid fa-shower card_icon"></i>${listing.card_icon1}
           <i class="fa-solid fa-car card_icon"></i>${listing.card_icon2}
           <i class="fa-solid fa-ruler card_icon"></i>${listing.card_icon3}
-            <h6 class="bott_head">${listing.bot_head}</h6>
+            <h6 class="                                                                 ">${listing.bot_head}</h6>
         </p>
        </div>
       </div>
