@@ -1,4 +1,10 @@
-.table_head{
+h1{
     display: flex;
     justify-content: center;
+    text-decoration: underline;
 }
+
+th.prop_title {
+    margin-left: 5px;
+}
+
