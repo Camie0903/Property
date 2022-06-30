@@ -89,9 +89,65 @@ function showlistings(listings) {
     <td>${listings.type}<td>
     <td>${listings.carhead}<td>
     <td>${listings.bot_head}<td>
-    <td><i class="fa-solid fa-pen-to-square p-3"></i>
+    <td><button
+    type="button"
+    class="btn btn-danger"
+    data-bs-toggle="modal"
+    data-bs-target="#edit${i}"
+  >
+    Edit
+  </button>
     <i onclick="deleteItem(${listings.id})" class="fa-solid fa-trash-can p-3"></i></td>
     <tr>
+
+
+    <div
+  class="modal fade"
+  id="edit${id}"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="">Edit Product</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" placeholder="Enter image" id="image-${i}" value="${listings.img}"/>
+        <input type="text" placeholder="Enter title" id="title-${i}" value="${listings.title}" />
+        <input type="text" placeholder="Enter type" id="type-${i}" value="${listings.type}"/>
+        <input type="text" placeholder="Enter carhead" id="carhead-${i}" value="${listings.carhead}"/>
+        <input type="text" placeholder="Enter bot_head" id="bot_head-${i}" value="${listings.bot_head}"/>
+       
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Cancel
+        </button>
+        <button
+        data-bs-toggle="modal"
+        data-bs-target="#edit-${i}"
+          type="button"
+          class="btn btn-primary"
+          onclick="editProperty(${i})"
+        >
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
        `;
   });
 }
@@ -119,13 +175,13 @@ function deleteItem(id){
   showlistings(listings)
 }
 
-function editItems(id) {
-  let img = document.querySelector(`#image-${id}`).value;
-  let title = document.querySelector(`#title-${id}`).value;
-  let type = document.querySelector(`#type-${id}`).value;
-  let carhead = document.querySelector(`#carhead-${id}`).value;
-  let bot_head = document.querySelector(`#bot_head-${id}`).value;
-  listings[id] = {
+function editItems(i) {
+  let img = document.querySelector(`#image-${i}`).value;
+  let title = document.querySelector(`#title-${i}`).value;
+  let type = document.querySelector(`#type-${i}`).value;
+  let carhead = document.querySelector(`#carhead-${i}`).value;
+  let bot_head = document.querySelector(`#bot_head-${i}`).value;
+  listings[i] = {
     img,
     title,
     type,
