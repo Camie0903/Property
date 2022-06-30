@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">  
+    <script src="https://kit.fontawesome.com/5d5fd894ec.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./admin.css">
+</head>
+
+<body>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      ADD Property
+    </button>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Fill in details</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form onsubmit="event.preventDefault();">
+              <input
+                type="text"
+                name="addTodo"
+                id="image"
+                placeholder="Add image URL "
+              />
+              <input
+                type="text"
+                name="addTodo"
+                id="title"
+                placeholder="Add Property name"
+                required
+              />
+              <input
+                type="text"
+                name="addTodo"
+                id="type"
+                placeholder="Add Property type "
+                required
+              />
+              <input
+                type="text"
+                name="addTodo"
+                id="location"
+                placeholder="Add Property location "
+                required
+              />
+              <input
+                type="text"
+                name="addTodo"
+                id="size"
+                placeholder="Add Property size in Sq M "
+                required
+              />
+              <button type="submit" id="addNewItem" class="btn btn-primary">
+                ADD
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="table caption-top">
+        <caption class="table_head">List of users</caption>
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">image url</th>
+            <th scope="col">title</th>
+            <th scope="col">type</th>
+            <th scope="col">location</th> 
+            <th scope="col">edite/delete</th>
+          </tr>
+        </thead>
+        <tbody id="listings">
+        </tbody>
+      </table>
+    <a href="./index.html">HOME PAGE</a>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

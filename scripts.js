@@ -113,7 +113,6 @@ let listing = JSON.parse(localStorage.getItem("listing"))
 },
   ]; 
   
-  
   function readData(listing) {
     document.querySelector("#listing").innerHTML = "";
     listing.forEach((listing, i) => {
@@ -142,3 +141,4 @@ let listing = JSON.parse(localStorage.getItem("listing"))
 
   }
   readData(listing);
+  

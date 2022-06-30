@@ -1,5 +1,5 @@
-let tracks = JSON.parse(localStorage.getItem("tracks"))
-  ? JSON.parse(localStorage.getItem("tracks"))
+let listings = JSON.parse(localStorage.getItem("listings"))
+  ? JSON.parse(localStorage.getItem("listings"))
   : [
       {
         id: "1",
@@ -75,21 +75,46 @@ let tracks = JSON.parse(localStorage.getItem("tracks"))
       },
      
     ];
-let asc = true;
-const tracksContainer = document.querySelector("#listing");
-function showTrack(tracks) {
-  tracksContainer.innerHTML = "";
-  console.log(tracks);
-  tracks.forEach((track) => {
-    tracksContainer.innerHTML += `
+
+    console.log(listings);
+// let asc = true;
+const listingsContainer = document.querySelector("#listings");
+function showlistings(listings) {
+  listingsContainer.innerHTML = "";
+  listings.forEach((listings) => {
+    listingsContainer.innerHTML += `
     <tr>
-    <td>${track.title}<td>
-    <td>${track.type}<td>
-    <td>${track.carhead}<td>
-    <td>${track.bot_head}<td>
-    <td>${track.price}<td>
+    <td>${listings.img}<td>
+    <td>${listings.title}<td>
+    <td>${listings.type}<td>
+    <td>${listings.location}<td>
+    <td>${listings.size}<td>
+    <td><i class="fa-solid fa-pen-to-square p-3"></i>
+    <i onclick="deleteItem(${listings.id})" class="fa-solid fa-trash-can p-3"></i></td>
     <tr>
        `;
   });
 }
-showTrack(tracks);
+showlistings(listings);
+
+function addProperty(){
+  const newPropety = {
+    img: document.querySelector("#image").value,
+    title: document.querySelector("#title").value,
+    type:document.querySelector("#type").value,
+    location:document.querySelector("#location").value,
+    size:document.querySelector("#size").value,
+    id:listings.length + 1,
+  };
+  listings.push(newPropety);
+  localStorage.setItem("listings", JSON.stringify(listings));
+  showlistings(listings);  
+}
+document.querySelector("#addNewItem").addEventListener("click", addProperty);
+
+
+function deleteItem(id){
+  listings = listings.filter((listings) => listings.id !== id);
+  localStorage.setItem("listings", JSON.stringify(listings));
+  showlistings(listings)
+}
